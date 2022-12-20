@@ -1,0 +1,6 @@
+form((submit)="submit()", #frm="ngForm")
+  label Login
+  input.form-control(type="text", [(ngModel)]="login", name='login')
+  label Password
+  input.form-control(type="password", [(ngModel)]="pass", name='pass')
+  button.btn.btn-primary.btn-submit(type="submit", [disabled]='frm.invalid || isPending') Submit
