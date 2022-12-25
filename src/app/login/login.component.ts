@@ -22,7 +22,7 @@ export class LoginComponent {
         'rejectUnauthorized': 'false'
         }),
       };
-    this.http.post('https://vps-7357abad.vps.ovh.net:8443/login', {
+    this.http.post('localhost:8443/login', {
       login: this.login,
       password: this.pass
     }, header_node).subscribe({

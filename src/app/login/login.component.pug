@@ -1,6 +1,18 @@
 form((submit)="submit()", #frm="ngForm")
-  label Login
-  input.form-control(type="text", [(ngModel)]="login", name='login')
-  label Password
-  input.form-control(type="password", [(ngModel)]="pass", name='pass')
-  button.btn.btn-primary.btn-submit(type="submit", [disabled]='frm.invalid || isPending') Submit
+  .flex.align-content-center.justify-content-center.min-h-screen.m-auto
+    .flex.align-items-center
+      p-card.border-round-lg
+        ng-template(pTemplate='header')
+          .bg-green-600.text-white.border-round-top-lg
+            h1.p-3 Logowanie
+        .p-float-label.-mt-3
+          input(id='login', name='login', type="text", [(ngModel)]="login", pInputText)
+          label(for='login') Login
+
+        .p-float-label.mt-5
+          input(id='pass', name='pass', type="password", [(ngModel)]="pass", pInputText)
+          label(for='pass') Hasło
+
+        ng-template(pTemplate='footer')
+          .flex.justify-content-end
+            button.bg-green-600(type="submit", label='Zaloguj', [disabled]='frm.invalid || isPending', pButton)
