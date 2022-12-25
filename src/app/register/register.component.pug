@@ -4,7 +4,7 @@ form((submit)="submit()", #frm="ngForm")
       p-card.border-round-lg
         ng-template(pTemplate='header')
           .border-round-top-lg([ngStyle]="{ background: 'var(--primary-color)', color:'var(--primary-color-text)' }")
-            h1.p-3 Logowanie
+            h1.p-3 Rejestracja
 
         .p-float-label.-mt-3
           input(id='login', name='login', type="text", [(ngModel)]="payload.login", pInputText)
@@ -14,7 +14,14 @@ form((submit)="submit()", #frm="ngForm")
           input(id='pass', name='pass', type="password", [(ngModel)]="payload.password", pInputText)
           label(for='pass') Hasło
 
+        .p-float-label.mt-5
+          input(id='repeatPass', name='repeatPass', type="password", [(ngModel)]="payload.repeatedPassword", pInputText)
+          label(for='repeatPass') Powtórz hasło
+
+        .p-float-label.mt-5
+          input(id='email', name='email', type="text", [(ngModel)]="payload.email", pInputText)
+          label(for='email') Email
+
         ng-template(pTemplate='footer')
           .flex.justify-content-end
-            p-button(label='Zarejestruj', styleClass='p-button-link mr-2', (onClick)='register()')
-            p-button(label='Zaloguj', [disabled]='frm.invalid || isPending', (onClick)='submit()')
+            p-button(label='Wyślij', [disabled]='frm.invalid || isPending', (onClick)='submit()')

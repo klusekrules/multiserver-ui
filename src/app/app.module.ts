@@ -11,12 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieModalComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

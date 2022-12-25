@@ -1,28 +1,23 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
-interface LoginInterface {
+interface RegisterInterface {
   login?: string;
   password?: string;
+  repeatedPassword?: string;
+  email?: string;
 };
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.pug',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-register',
+  templateUrl: './register.component.pug',
+  styleUrls: ['./register.component.scss']
 })
-export class LoginComponent {
-  public payload: LoginInterface = {}; 
+export class RegisterComponent {
+  public payload: RegisterInterface = {}; 
   public isPending: boolean = false;
 
-  constructor(private http: HttpClient,
-              private router: Router) {
-  }
-
-  register = () => {
-    this.router.navigate(['/register']);
-  }
+  constructor(private http: HttpClient) { }
 
   submit = () => {
     let header_node = {
@@ -32,7 +27,7 @@ export class LoginComponent {
       }),
     };
 
-    this.http.post('http://localhost:8443/login', { ...this.payload }, header_node)
+    this.http.post('http://localhost:8443/register', { ...this.payload }, header_node)
       .subscribe({
         next: (v) => console.log(v),
         error: (e) => console.error(e),
