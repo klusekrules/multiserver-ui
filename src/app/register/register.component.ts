@@ -27,7 +27,7 @@ export class RegisterComponent {
       }),
     };
 
-    this.http.post('http://localhost:8443/register', { ...this.payload }, header_node)
+    this.http.post('/register', { ...this.payload }, header_node)
       .subscribe({
         next: (v) => console.log(v),
         error: (e) => console.error(e),

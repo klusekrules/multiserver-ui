@@ -32,7 +32,7 @@ export class LoginComponent {
       }),
     };
 
-    this.http.post('http://localhost:8443/login', { ...this.payload }, header_node)
+    this.http.post('/login', { ...this.payload }, header_node)
       .subscribe({
         next: (v) => console.log(v),
         error: (e) => console.error(e),
