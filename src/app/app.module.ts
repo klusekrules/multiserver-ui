@@ -12,7 +12,12 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { RegisterComponent } from './register/register.component';
-import { RouterModule } from '@angular/router';
+import { ReposComponent } from './repos/repos.component';
+import { ReposAddModalComponent } from './repos-add-modal/repos-add-modal.component';
+import { ToastModule } from 'primeng/toast';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { UtilsModule } from './utils/utils.module';
+import { ReposService } from './repos.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +25,8 @@ import { RouterModule } from '@angular/router';
     MovieModalComponent,
     LoginComponent,
     RegisterComponent,
+    ReposComponent,
+    ReposAddModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,8 +37,13 @@ import { RouterModule } from '@angular/router';
     ButtonModule,
     FormsModule,
     CardModule,
+    ToastModule,
+    DynamicDialogModule,
+    UtilsModule,
   ],
-  providers: [],
+  providers: [
+    ReposService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

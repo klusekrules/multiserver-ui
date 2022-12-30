@@ -1,0 +1,13 @@
+form((submit)="submit()", #frm="ngForm")
+  .grid.mt-5
+    .p-float-label.w-full
+      input.w-full(id='name', name='name', type="text", [(ngModel)]="payload.name", pInputText)
+      label(for='name') Name
+  
+  .grid.mt-5
+    .p-float-label.w-full
+      input.w-full(id='label', name='label', type="text", [(ngModel)]="payload.label", pInputText)
+      label(for='label') Label
+
+  .grid.mt-5.justify-content-end
+    p-button(label='Wyślij', [disabled]='!!frm.invalid', (onClick)='submit()')

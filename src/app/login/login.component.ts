@@ -34,7 +34,9 @@ export class LoginComponent {
 
     this.http.post('/login', { ...this.payload }, header_node)
       .subscribe({
-        next: (v) => console.log(v),
+        next: (v) => {
+          this.router.navigate(['/repo/list']);
+        },
         error: (e) => console.error(e),
         complete: () => console.info('complete') 
       });

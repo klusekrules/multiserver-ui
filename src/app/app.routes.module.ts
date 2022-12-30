@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ReposComponent } from './repos/repos.component';
 
 const routes: Routes = [{
   path: '',
@@ -13,6 +14,9 @@ const routes: Routes = [{
 }, {
   path: 'register',
   component: RegisterComponent,
+}, {
+  path: 'repo/list',
+  component: ReposComponent,
 }];
 
 @NgModule({
