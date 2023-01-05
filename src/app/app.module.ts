@@ -15,9 +15,11 @@ import { RegisterComponent } from './register/register.component';
 import { ReposComponent } from './repos/repos.component';
 import { ReposAddModalComponent } from './repos-add-modal/repos-add-modal.component';
 import { ToastModule } from 'primeng/toast';
+import { TableModule } from 'primeng/table';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { UtilsModule } from './utils/utils.module';
 import { ReposService } from './repos.service';
+import { MegaMenuModule } from 'primeng/megamenu';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { ReposService } from './repos.service';
     ToastModule,
     DynamicDialogModule,
     UtilsModule,
+    TableModule,
+    MegaMenuModule,
   ],
   providers: [
     ReposService,

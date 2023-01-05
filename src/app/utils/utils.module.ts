@@ -23,5 +23,8 @@ import { SecurityService } from './security.service';
     DictionariesService,
     SecurityService,
   ],
+  exports: [
+    TopbarComponent,
+  ]
 })
 export class UtilsModule { }

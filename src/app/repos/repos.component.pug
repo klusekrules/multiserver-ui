@@ -1,3 +1,17 @@
-small([textContent]='data | json')
+.surface-card.p-4.shadow-2.border-round.m-2
+  .border-1.surface-border
+    p-table([value]='data', [tableStyle]="{'min-width': '50rem'}")
+      ng-template(pTemplate='header')
+        tr
+          th Id
+          th Name
+          th Label
+
+      ng-template(pTemplate='body', let-item='')
+        tr
+          td([textContent]='item.id')
+          td([textContent]='item.name')
+          td([textContent]='item.label')
+
 button.top-0.right-0.m-5.absolute.p-button-rounded(pButton,
   pRipple, type="button", (click)="add()", icon="pi pi-plus", [disabled]='isLoading')
